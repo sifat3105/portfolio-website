@@ -1,0 +1,98 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+
+
+<body>
+    <div class="container mt-5" style="border: solid 1px #8d8d8d; padding: 20px; border-radius: 20px; background-color: #fff;">
+        <h1>Create About Section</h1>
+        <form method="post" enctype="multipart/form-data" class="form" style="max-width: 300px; display: flex; flex-direction: column; gap: 20px;">
+            {% csrf_token %}
+            <div class="input-field" style="position: relative;">
+                <input type="text" name="section_title" id="section_title" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="section_title" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Section Title</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <textarea name="section_text" id="section_text" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;"></textarea>
+                <label for="section_text" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Section Text</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="file" name="profile_image" id="profile_image" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="profile_image" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Profile Image</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="text" name="heading" id="heading" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="heading" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Heading</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <textarea name="intro_text" id="intro_text" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;"></textarea>
+                <label for="intro_text" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Intro Text</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="date" name="birthday" id="birthday" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="birthday" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Birthday</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="url" name="website" id="website" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="website" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Website</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="tel" name="phone" id="phone" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="phone" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Phone</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="text" name="city" id="city" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="city" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">City</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="number" name="age" id="age" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="age" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Age</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="text" name="degree" id="degree" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="degree" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Degree</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input type="email" name="email" id="email" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="email" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Email</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <select name="freelance_status" id="freelance_status" required style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="freelance_status" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Freelance Status</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <textarea name="additional_text" id="additional_text" style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;"></textarea>
+                <label for="additional_text" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Additional Text</label>
+            </div>
+            <button type="submit" class="btn" style="padding: 10px 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; border-radius: 10px; border: solid 1px #1034aa; border-bottom: solid 1px #90c2ff; background: linear-gradient(135deg, #0034de, #006eff); color: #fff; font-weight: bolder; transition: all 0.2s ease; box-shadow: 0px 2px 3px #000d3848, inset 0px 4px 5px #0070f0, inset 0px -4px 5px #002cbb;">Save</button>
+        </form>
+    </div>
+    <div class="container" style="border: solid 1px #8d8d8d; padding: 20px; border-radius: 20px; background-color: #fff;">
+        <div class="heading" style="font-size: 1.3rem; margin-bottom: 20px; font-weight: bolder;">SignIn to your account</div>
+        <form class="form" action="" style="max-width: 300px; display: flex; flex-direction: column; gap: 20px;">
+            <div class="input-field" style="position: relative;">
+                <input required="" autocomplete="off" type="text" name="text" id="username" style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="username" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Full Name</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input required="" autocomplete="off" type="email" name="email" id="email" style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="email" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Email</label>
+            </div>
+            <div class="input-field" style="position: relative;">
+                <input required="" autocomplete="off" type="password" name="text" id="password" style="padding: 10px 15px; font-size: 1rem; border-radius: 8px; border: solid 1px #8d8d8d; letter-spacing: 1px; width: 100%;">
+                <label for="password" style="position: absolute; color: #8d8d8d; pointer-events: none; background-color: transparent; left: 15px; transform: translateY(0.6rem); transition: all 0.3s ease;">Password</label>
+            </div>
+            <div class="btn-container" style="width: 100%; display: flex; align-items: center; gap: 20px;">
+                <button class="btn" style="padding: 10px 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; border-radius: 10px; border: solid 1px #1034aa; border-bottom: solid 1px #90c2ff; background: linear-gradient(135deg, #0034de, #006eff); color: #fff; font-weight: bolder; transition: all 0.2s ease; box-shadow: 0px 2px 3px #000d3848, inset 0px 4px 5px #0070f0, inset 0px -4px 5px #002cbb;">Submit</button>
+                <div class="acc-text">
+                    New here? <span style="color: #0000ff; cursor: pointer;">Create Account</span>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+{% endblock content %}
