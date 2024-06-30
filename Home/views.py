@@ -9,6 +9,7 @@ def home_view(request):
 
 def about_create(request):
     if request.method == 'POST':
+        
         form = AboutForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -19,4 +20,5 @@ def about_create(request):
 
 
 def success_page(request):
+    
     return render(request, 'success.html')
